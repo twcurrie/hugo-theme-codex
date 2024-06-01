@@ -39,11 +39,6 @@
   {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.FirstSuffix.Suffix .Permalink $.Site.Title | safeHTML }} 
   {{ end }} 
   {{ block "links" . }} {{ end }}
-  {{ partial "seo-schema.html" .}}
-
-  {{- if not .Site.IsServer -}}
-      {{ template "_internal/google_analytics_async.html" . }}
-  {{- end -}}
 </head>
 
 <body>

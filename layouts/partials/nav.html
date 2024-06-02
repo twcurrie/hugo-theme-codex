@@ -1,12 +1,13 @@
 <nav class="nav" id="navigation">
   <ul class="nav__list">
     {{ $currentPage := . }}
+    {{ $overrideSelect := .Params.select }}
     {{ range .Site.Menus.main }}
       <li>
-        <a {{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }} class="active"
-        {{end}} href="{{ .URL }}"><span>{{ .Name }}</span>
+        <a {{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) (eq $overrideSelect .Name) }} class="active"
+        {{end}} href="{{ .URL }}"><span> {{ .Name }}</span>
         </a>
-        {{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }}
+        {{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) (eq $overrideSelect .Name) }}
         <span class="colored-period">. </span>
         {{ else }}
         <span style="color:white">.</span>

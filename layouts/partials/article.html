@@ -1,0 +1,6 @@
+<article class="post__content">
+    {{ partial "anchored-headings.html" .Content }}
+    {{ if or .Params.math .Site.Params.math }}
+    {{ partial "math.html" . }}
+    {{ end }}
+</article>

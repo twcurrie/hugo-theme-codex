@@ -1,0 +1,25 @@
+.colored-period {
+  color: {{ .Site.Params.colors.fancy | default "#9013fe" }}
+}
+
+.colored-dot {
+    position: relative;
+    display: inline-block;
+}
+.colored-dot:before,
+.colored-dot:after {
+    opacity: 1;
+    content: 'i';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font: inherit;
+}
+.colored-dot:before {
+    color: {{ .Site.Params.colors.fancy | default "#9013fe" }};
+    clip: rect(auto, auto, 0.33em, auto);
+}
+.colored-dot:after {
+    clip: rect(0.33em, auto, auto, auto);
+}

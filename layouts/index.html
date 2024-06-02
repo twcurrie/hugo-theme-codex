@@ -7,9 +7,9 @@
 <div class="splash-container">
   <div class="splash">
     <h1>
-      {{ .Params.first_name }}
+      {{ .Params.first_name }} {{ .Params.middle_initial }}
       {{- if $.Params.middle_initial -}}
-        {{ .Params.middle_initial }}<span class="colored-period">.</span>
+       <span class="colored-period">. </span>
       {{- end -}}
       {{- if $.Params.last_name -}}
         {{ replace .Params.last_name "i" "<span class=\"colored-dot\">i</span>" | safeHTML }}<span class="colored-period">.</span>

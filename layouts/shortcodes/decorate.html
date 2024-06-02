@@ -1,0 +1,3 @@
+{{ $content := replace .Inner "i" "<span class=\"colored-dot\">i</span>" }}
+{{ $content = replace $content "."  "<span class=\"colored-period\">.</span>" }}
+{{- $content | safeHTML  -}}

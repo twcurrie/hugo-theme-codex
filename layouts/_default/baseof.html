@@ -27,9 +27,10 @@
   {{ block "styles" . }} {{ end }} <!-- Get "style_opts" variable from "styles" block -->
   {{ $base_styles_opts := .Scratch.Get "style_opts" | default (dict "src" "scss/pages/about.scss" "dest" "css/about.css") }}
   {{ $custom_styles_opts := (dict "src" "scss/custom.scss" "dest" "css/custom.css") }}
-  
+
   {{ $current_page := . }}
-  
+  {{ $showSocial := .Params.show_social | default false }}
+
   {{ range (slice $base_styles_opts $custom_styles_opts) }}
     {{ $style := resources.Get .src | resources.ExecuteAsTemplate .dest $current_page | toCSS | minify | fingerprint }}
     <link type="text/css" rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}"/>
@@ -56,5 +57,9 @@
   <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity | safeHTMLAttr }}" crossorigin="anonymous"></script>
   {{ block "scripts" . }} {{ end }}
 </body>
+
+{{ if $showSocial }}
+{{ partial "social-icons.html" .}}
+{{ end }}
 
 </html>

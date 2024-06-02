@@ -53,7 +53,6 @@ function setColor() {
 
   var dateString = `${year}/${month}/${day}`;
   var colorForToday = '#' + intToRGB(hashCode(dateString))
-  console.log(colorForToday);
 
   setColorForClassItems("colored-period", colorForToday);
   var styleElem = document.head.appendChild(document.createElement("style"));

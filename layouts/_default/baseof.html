@@ -2,7 +2,8 @@
 <html lang="{{ .Site.LanguageCode }}">
 
 <head>
-  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  {{ $expandTitle:= .Params.expand_title | default false }}
+  <title>{{ if and (not $expandTitle) ( .IsHome) }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">

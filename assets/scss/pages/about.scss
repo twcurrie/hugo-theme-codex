@@ -44,17 +44,3 @@
   text-decoration: none;
   color: $primary;
 }
-
-/* overrides */
-
-main {
-  padding-top: 0;
-  padding-bottom: 0;
-  height: 100%;
-}
-
-.social-icons {
-  justify-content: flex-start;
-  padding-top: 1rem;
-  margin-left: -0.8rem; // offset to negate icon's padding to align with text above
-}

@@ -49,9 +49,9 @@ function setColor() {
   var date = new Date();
   var year = date.getUTCFullYear().toString();
   var month = (date.getUTCMonth() + 1).toString().padStart(2,"0");
-  var day = date.getUTCDay().toString().padStart(2,"0");
+  var day = (date.getUTCDay() + 1).toString().padStart(2,"0");
 
-  var dateString = '${year}/${month}/${day}';
+  var dateString = `${year}/${month}/${day}`;
   var colorForToday = '#' + intToRGB(hashCode(dateString))
   console.log(colorForToday);
 

@@ -57,6 +57,7 @@ function setColor() {
   setColorForClassItems("colored-period", colorForToday);
   var styleElem = document.head.appendChild(document.createElement("style"));
   styleElem.innerHTML = `.colored-dot:before {color: ${colorForToday};}`;
+  document.documentElement.style.setProperty('--daily-color', colorForToday);
 }
 
 setColor();

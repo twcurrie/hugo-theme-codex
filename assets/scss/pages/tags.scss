@@ -15,6 +15,14 @@
   }
 }
 
+.post__title a {
+  color: var(--daily-color, #{$primary});
+
+  &:hover {
+    color: $darkGrey;
+  }
+}
+
 .tag__header {
   align-items: baseline;
   display: flex;

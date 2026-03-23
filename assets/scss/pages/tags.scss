@@ -1,6 +1,20 @@
 @import "../main";
 @import "../partials/post-list";
 
+.tag-list {
+  list-style: none;
+  padding: 0;
+
+  a {
+    color: var(--daily-color, #{$primary});
+    text-decoration: none;
+
+    &:hover {
+      color: $darkGrey;
+    }
+  }
+}
+
 .tag__header {
   align-items: baseline;
   display: flex;

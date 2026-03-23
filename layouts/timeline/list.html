@@ -1,0 +1,33 @@
+{{ define "styles" }}
+    {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/timeline.scss" "dest" "css/timeline.css") }}
+{{ end }}
+
+{{ define "main" }}
+
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}
+
+<div class="timeline">
+  {{ range (.Site.RegularPages.GroupByDate "2006") }}
+  <div class="timeline__year-group">
+    <h2 class="timeline__year">{{ .Key }}</h2>
+    {{ range (.Pages.GroupByDate "January") }}
+    <div class="timeline__month-group">
+      <h3 class="timeline__month">{{ .Key }}</h3>
+      <div class="timeline__posts">
+        {{ range .Pages }}
+        <div class="timeline__post">
+          <time class="post__date" datetime="{{ .Date }}">{{ .Date.Format $dateFormat }}</time>
+          <h4 class="post__title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h4>
+          {{ partial "tags.html" . }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+
+{{ end }}

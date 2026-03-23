@@ -1,0 +1,57 @@
+@import "../main";
+@import "../partials/post-list";
+
+.timeline {
+  max-width: 1200px;
+
+  @media screen and (min-width: $medium) {
+    padding-left: 50px;
+  }
+}
+
+.timeline__year {
+  color: $primary;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.timeline__month-group {
+  border-left: 2px solid $greyTableBorder;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.timeline__month {
+  color: $darkGrey;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.timeline__post {
+  background: $lightGrey;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+
+  .post__title {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+
+  .post__date {
+    color: $grey;
+    font-size: 0.8rem;
+    display: block;
+  }
+}

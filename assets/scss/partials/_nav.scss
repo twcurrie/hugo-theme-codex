@@ -11,10 +11,36 @@
   z-index: 1;
 
   @media screen and (min-width: $medium) {
-    display: block;
+    display: flex;
+    align-items: flex-start;
     visibility: visible;
     padding-top: 3em;
     width: $navWidth;
+    overflow: visible;
+  }
+}
+
+.nav__list--sub {
+  display: none;
+
+  @media screen and (min-width: $medium) {
+    display: block;
+    padding-left: 1.5rem;
+    min-width: $navWidth;
+  }
+}
+
+.blog--active .nav {
+  @media screen and (min-width: $medium) {
+    width: auto;
+  }
+}
+
+main {
+  @media screen and (min-width: $medium) {
+    .blog--active & {
+      padding-left: calc(1.5rem + #{$navWidth} * 2 + 1.5rem);
+    }
   }
 }
 

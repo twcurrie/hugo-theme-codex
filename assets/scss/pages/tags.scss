@@ -17,10 +17,10 @@
 }
 
 .post__title a {
-  color: var(--daily-color, #{$primary});
+  color: $grey;
 
   &:hover {
-    color: $darkGrey;
+    color: $black;
   }
 }
 

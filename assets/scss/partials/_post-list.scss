@@ -23,8 +23,12 @@
   font-weight: 500;
 
   a {
-    color: $black;
+    color: $grey;
     text-decoration: none;
+
+    &:hover {
+      color: $black;
+    }
   }
 }
 

@@ -41,3 +41,11 @@
   font-weight: bold;
   color: $black;
 }
+
+.post:hover .post__title {
+  font-weight: bold;
+
+  a {
+    color: $black;
+  }
+}

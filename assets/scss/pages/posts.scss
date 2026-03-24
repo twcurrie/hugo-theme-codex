@@ -46,7 +46,7 @@
   }
 
   &:hover {
-    color: $darkGrey;
+    color: var(--daily-color, #{$darkGrey});
   }
 }
 

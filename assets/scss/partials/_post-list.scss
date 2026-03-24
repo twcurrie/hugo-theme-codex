@@ -36,3 +36,7 @@
   color: $grey;
   font-size: 0.8rem;
 }
+
+.post:hover .post__date {
+  font-weight: bold;
+}

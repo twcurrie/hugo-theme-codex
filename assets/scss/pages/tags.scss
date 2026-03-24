@@ -37,6 +37,38 @@
   }
 }
 
+// Tag pills on category/tag list pages — matches post page style but uses daily color
+.post-list .tags__list {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.post-list .tag__item {
+  display: inline-block;
+}
+
+.post-list .tag__link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--daily-color, #{$primary}) 12%, white);
+  color: var(--daily-color, #{$primary});
+  font-size: 0.8rem;
+
+  &::before {
+    content: none;
+  }
+
+  &:hover {
+    background: color-mix(in srgb, var(--daily-color, #{$primary}) 22%, white);
+  }
+}
+
 .tag__header {
   align-items: baseline;
   display: flex;

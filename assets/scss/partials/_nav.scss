@@ -97,6 +97,10 @@
   text-align: right;
 
   // Mobile: show inline below blog, same styles as main list
+  @media screen and (max-width: $medium - 1) {
+    margin-top: 3em;
+  }
+
   li {
     margin-bottom: 3em;
     line-height: 1.5em;

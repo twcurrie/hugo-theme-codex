@@ -1,7 +1,8 @@
 @import "../main";
 @import "../partials/post-list";
 
-.category-list {
+.category-list,
+.tag-list {
   list-style: none;
   padding: 0;
 
@@ -10,21 +11,7 @@
     text-decoration: none;
 
     &:hover {
-      color: var(--daily-color, #{$primary});
-    }
-  }
-}
-
-.tag-list {
-  list-style: none;
-  padding: 0;
-
-  a {
-    color: var(--daily-color, #{$primary});
-    text-decoration: none;
-
-    &:hover {
-      color: $darkGrey;
+      color: $black;
     }
   }
 }

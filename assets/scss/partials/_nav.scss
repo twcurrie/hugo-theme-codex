@@ -11,36 +11,11 @@
   z-index: 1;
 
   @media screen and (min-width: $medium) {
-    display: flex;
-    align-items: flex-start;
+    display: block;
     visibility: visible;
     padding-top: 3em;
     width: $navWidth;
     overflow: visible;
-  }
-}
-
-.nav__list--sub {
-  display: none;
-
-  @media screen and (min-width: $medium) {
-    display: block;
-    padding-left: 1.5rem;
-    min-width: $navWidth;
-  }
-}
-
-.blog--active .nav {
-  @media screen and (min-width: $medium) {
-    width: auto;
-  }
-}
-
-main {
-  @media screen and (min-width: $medium) {
-    .blog--active & {
-      padding-left: calc(1.5rem + #{$navWidth} * 2 + 1.5rem);
-    }
   }
 }
 
@@ -105,5 +80,67 @@ main {
 
   @media screen and (min-width: $medium) {
     font-size: 1em;
+  }
+}
+
+// Sub-nav: categories and timeline under blog
+.nav__item--has-sub {
+  @media screen and (min-width: $medium) {
+    position: relative;
+  }
+}
+
+.nav__list--sub {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+
+  // Mobile: show inline below blog, same styles as main list
+  li {
+    margin-bottom: 3em;
+    line-height: 1.5em;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $grey;
+    text-decoration: none;
+    font-size: 2em;
+
+    &.active {
+      color: $black;
+      font-weight: bold;
+    }
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  // Desktop: absolute column to the right of blog
+  @media screen and (min-width: $medium) {
+    position: absolute;
+    left: calc(100% + 1.5rem);
+    top: 0;
+    white-space: nowrap;
+
+    li {
+      margin-bottom: 1.75em;
+    }
+
+    a {
+      font-size: 1em;
+    }
+  }
+}
+
+// Desktop: increase main content padding to clear the sub-column
+.blog--active main {
+  @media screen and (min-width: $medium) {
+    padding-left: calc(1.5rem + #{$navWidth} * 2 + 1.5rem);
   }
 }

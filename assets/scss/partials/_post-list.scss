@@ -49,3 +49,8 @@
     color: $black;
   }
 }
+
+.post:hover:not(:has(.tag__link:hover, .post__date-month:hover, .post__date-year:hover)) .tag__link {
+  font-weight: bold;
+  color: $black;
+}

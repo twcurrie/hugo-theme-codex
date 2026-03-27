@@ -4,15 +4,25 @@
 
 {{ define "main" }}
     
-{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}    
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}
+{{ $timelineURL := .Site.Params.timelineURL }}
 
 <div class="post-list__container">
   <ul class="post-list">
     {{ range .Pages }}
+    {{ $year := .Date.Format "2006" }}
+    {{ $monthID := printf "%s-%s" $year (.Date.Format "January" | lower) }}
     <li class="post">
       <div class="post__header">
-        <time class="post__date" datetime="{{ .Date }}"
-          >{{ .Date.Format $dateFormat }}</time>
+        <time class="post__date" datetime="{{ .Date }}">
+          {{- if $timelineURL -}}
+            <a class="post__date-month" href="{{ $timelineURL }}/#{{ $monthID }}">{{ .Date.Format "Jan" }}</a>
+            {{ .Date.Format "2" }},
+            <a class="post__date-year" href="{{ $timelineURL }}/#{{ $year }}">{{ $year }}</a>
+          {{- else -}}
+            {{ .Date.Format $dateFormat }}
+          {{- end -}}
+        </time>
         <h2 class="post__title">
           <a href="{{.RelPermalink}}">{{ .Title }}</a>
         </h2>

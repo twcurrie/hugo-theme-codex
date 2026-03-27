@@ -220,11 +220,12 @@
   }
 }
 
-// Option A: category label shown inline with the date
+// Option A: category label shown inline with the date — matches timeline__meta layout
 .post__meta-row {
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
-  gap: 1rem;
+  max-width: 700px;
 }
 
 .post__category-label {

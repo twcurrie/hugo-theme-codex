@@ -87,6 +87,44 @@
   }
 }
 
+// Option B: category as a grey pill below the post title
+.category-pills {
+  list-style: none;
+  padding: 0;
+  margin: 0.3rem 0 0.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.category-pill__item {
+  display: inline-block;
+}
+
+.category-pill__link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  background: $lightGrey;
+  color: $darkGrey;
+  font-size: 0.8rem;
+  border: 1px solid $greyTableBorder;
+
+  &::before {
+    content: "§";
+    color: var(--daily-color, #{$primary});
+    font-size: 0.65rem;
+    margin-right: 2px;
+  }
+
+  &:hover {
+    font-weight: bold;
+    color: $black;
+    background: darken($lightGrey, 4%);
+  }
+}
+
 .post__date-month,
 .post__date-year {
   color: inherit;

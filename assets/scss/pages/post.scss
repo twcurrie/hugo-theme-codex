@@ -127,8 +127,15 @@ $tocBreakpoint: 1024px;
   padding: 0.2em 0.4em;
   border-radius: 3px;
   background: color-mix(in srgb, var(--daily-color, #{$primary}) 12%, white);
-  color: var(--daily-color, #{$primary});
+  color: $grey;
   font-size: 0.8rem;
+
+  &::before {
+    content: "#";
+    color: var(--daily-color, #{$primary});
+    font-size: 0.7rem;
+    padding-right: 1px;
+  }
 
   &:hover {
     background: color-mix(in srgb, var(--daily-color, #{$primary}) 22%, white);

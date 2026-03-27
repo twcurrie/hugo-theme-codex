@@ -37,12 +37,12 @@
   font-size: 0.8rem;
 }
 
-.post:hover .post__date {
+.post:hover:not(:has(.tag__link:hover)) .post__date {
   font-weight: bold;
   color: $black;
 }
 
-.post:hover .post__title {
+.post:hover:not(:has(.tag__link:hover)) .post__title {
   font-weight: bold;
 
   a {

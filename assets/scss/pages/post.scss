@@ -139,6 +139,7 @@ $tocBreakpoint: 1024px;
 
   &:hover {
     background: color-mix(in srgb, var(--daily-color, #{$primary}) 22%, white);
+    color: $black;
   }
 }
 

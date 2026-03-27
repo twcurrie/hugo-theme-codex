@@ -97,3 +97,32 @@
     color: $black;
   }
 }
+
+// Option A: category label shown inline with the date, right-aligned
+.post__meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.post__category-label {
+  font-size: 0.75rem;
+  color: $grey;
+}
+
+.post__category-link {
+  color: $grey;
+  text-decoration: none;
+
+  &::before {
+    content: "§";
+    color: var(--daily-color, #{$primary});
+    font-size: 0.65rem;
+    margin-right: 2px;
+  }
+
+  &:hover {
+    font-weight: bold;
+    color: $black;
+  }
+}

@@ -15,13 +15,9 @@
     <li class="post">
       <div class="post__header">
         <time class="post__date" datetime="{{ .Date }}">
-          {{- if $timelineURL -}}
-            <a class="post__date-month" href="{{ $timelineURL }}/#{{ $monthID }}">{{ .Date.Format "Jan" }}</a>
-            {{ .Date.Format "2" }},
-            <a class="post__date-year" href="{{ $timelineURL }}/#{{ $year }}">{{ $year }}</a>
-          {{- else -}}
-            {{ .Date.Format $dateFormat }}
-          {{- end -}}
+          <a class="post__date-month" href="{{ $timelineURL }}/#{{ $monthID }}">{{ .Date.Format "Jan" }}</a>
+          {{ .Date.Format "2" }},
+          <a class="post__date-year" href="{{ $timelineURL }}/#{{ $year }}">{{ $year }}</a>
         </time>
         <h2 class="post__title">
           <a href="{{.RelPermalink}}">{{ .Title }}</a>

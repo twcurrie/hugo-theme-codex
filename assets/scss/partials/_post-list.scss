@@ -37,12 +37,12 @@
   font-size: 0.8rem;
 }
 
-.post:hover:not(:has(.tag__link:hover, .post__date-month:hover, .post__date-year:hover)) .post__date {
+.post:hover:not(:has(.tag__link:hover, .post__date-month:hover, .post__date-year:hover, .post__category-link:hover)) .post__date {
   font-weight: bold;
   color: $black;
 }
 
-.post:hover:not(:has(.tag__link:hover, .post__date-month:hover, .post__date-year:hover)) .post__title {
+.post:hover:not(:has(.tag__link:hover, .post__date-month:hover, .post__date-year:hover, .post__category-link:hover)) .post__title {
   font-weight: bold;
 
   a {
@@ -50,7 +50,12 @@
   }
 }
 
-.post:hover:not(:has(.tag__link:hover, .post__date-month:hover, .post__date-year:hover)) .tag__link {
+.post:hover:not(:has(.tag__link:hover, .post__date-month:hover, .post__date-year:hover, .post__category-link:hover)) .tag__link {
+  font-weight: bold;
+  color: $black;
+}
+
+.post:hover:not(:has(.tag__link:hover, .post__date-month:hover, .post__date-year:hover, .post__category-link:hover)) .post__category-link {
   font-weight: bold;
   color: $black;
 }

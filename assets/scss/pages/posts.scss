@@ -47,7 +47,19 @@
   }
 
   &:hover {
-    color: var(--daily-color, #{$darkGrey});
+    font-weight: bold;
+    color: $black;
+  }
+}
+
+.post__date-month,
+.post__date-year {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    font-weight: bold;
+    color: $black;
   }
 }
 

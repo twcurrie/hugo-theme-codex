@@ -47,7 +47,8 @@
   }
 
   &:hover {
-    color: var(--daily-color, #{$darkGrey});
+    font-weight: bold;
+    color: $black;
   }
 }
 
